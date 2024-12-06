@@ -12,9 +12,10 @@
     <div class="container">
         <h1>Công Cụ Điểm Danh Học Sinh</h1>
 
+        <!-- Thêm học sinh mới -->
         <div class="section">
             <h2>Thêm Học Sinh Mới</h2>
-            <input type="text" id="newStudentName" placeholder="Nhập tên học sinh" required>
+            <input type="text" id="newStudentName" placeholder="Nhập tên học sinh">
             <div id="classesSelection">
                 <label><input type="checkbox" value="Piano"> Piano</label>
                 <label><input type="checkbox" value="Guitar"> Guitar</label>
@@ -26,9 +27,10 @@
             <button id="addStudentButton">Thêm Học Sinh</button>
         </div>
 
+        <!-- Điểm danh -->
         <div class="section">
             <h2>Điểm Danh Học Sinh</h2>
-            <input type="text" id="attendanceStudentName" placeholder="Nhập tên học sinh để điểm danh" required>
+            <input type="text" id="attendanceStudentName" placeholder="Nhập tên học sinh để điểm danh">
             <div id="suggestionsListAttendance" class="suggestions-list"></div>
             <div id="classesAttendanceSelection">
                 <label><input type="checkbox" value="Piano"> Piano</label>
@@ -39,26 +41,38 @@
                 <label><input type="checkbox" value="MC"> MC</label>
             </div>
             <div>
-                Ngày: <input type="date" id="attendanceDate" required>
-                Giờ: <input type="time" id="attendanceTime" required>
+                Ngày: <input type="date" id="attendanceDate">
+                Giờ: <input type="time" id="attendanceTime">
             </div>
             <button id="markAttendanceButton">Điểm Danh</button>
         </div>
 
+        <!-- Truy vấn lịch sử điểm danh -->
         <div class="section">
-            <h2>Lịch Sử Điểm Danh</h2>
-            <table id="attendanceTable">
-                <thead>
-                    <tr>
-                        <th>Tên</th>
-                        <th>Ngày</th>
-                        <th>Giờ</th>
-                        <th>Lớp</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+            <h2>Truy Vấn Lịch Sử Điểm Danh</h2>
+            <input type="text" id="queryStudentName" placeholder="Tìm kiếm tên học sinh">
+            <div id="suggestionsListQuery" class="suggestions-list"></div>
+            <div>
+                Ngày Bắt Đầu: <input type="date" id="startDate">
+                Ngày Kết Thúc: <input type="date" id="endDate">
+            </div>
+            <button id="queryByNameAndDateButton">Truy Vấn Học Sinh Theo Tên Và Ngày</button>
         </div>
+
+        <!-- Truy vấn theo giờ -->
+        <div class="section">
+            <h2>Truy Vấn Điểm Danh Theo Giờ</h2>
+            <div>
+                Ngày Bắt Đầu: <input type="date" id="timeStartDate">
+                Ngày Kết Thúc: <input type="date" id="timeEndDate">
+                Giờ Bắt Đầu: <input type="time" id="startTime">
+                Giờ Kết Thúc: <input type="time" id="endTime">
+            </div>
+            <button id="queryByTimeButton">Truy Vấn Theo Giờ</button>
+        </div>
+
+        <!-- Kết quả -->
+        <div id="attendanceResult"></div>
     </div>
 </body>
 </html>
